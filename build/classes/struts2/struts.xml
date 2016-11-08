@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+<struts>
+	<package name="default" extends="struts-default">
+			<interceptors>		<!-- 拦截器配置 -->
+			<interceptor name="tjInterceptor" class="org.tj.interceptor.TjInterceptor"></interceptor>
+			<interceptor-stack name="TjStack">		<!-- 自定义拦截器栈 -->
+				<interceptor-ref name="tjInterceptor"></interceptor-ref>
+				<interceptor-ref name="defaultStack"></interceptor-ref>
+			</interceptor-stack>
+		</interceptors>
+		<default-interceptor-ref name="TjStack"></default-interceptor-ref> 
+		<default-action-ref name="default"></default-action-ref>   <!-- 找不到指定的action的时候使用这个action -->
+		<default-class-ref class="org.tj.action.DefaultAction"></default-class-ref>	<!-- action未指定class时使用此class地址 -->
+		
+		<action name="default" class="org.tj.action.DefaultAction">
+			<result>/WEB-INF/jsp/default_action.jsp</result>
+		</action>
+		<action name="a_login_defaultTest">
+			<result>/WEB-INF/jsp/default_class.jsp</result>
+		</action>
+	</package>
+	<include file="struts2/struts_login.xml"></include>
+</struts>
+
+
+
+
+
+
+
+
+

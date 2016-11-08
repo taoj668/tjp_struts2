@@ -1,0 +1,29 @@
+此项目的作为练习项目，主要练习struts2相关技术
+2016.11.01 
+15:23 最基本的struts2应用的登录测试成功，存入github提交版本v0.1
+16:36 jsp传入struts2的数据封装成User后传递，安全起见将jsp页面放入WEB-INF路径下
+2016.11.02 
+09:45 更改struts.xml到src/struts2/struts.xml路径，完成相应的配置，测试成功
+10:18 struts.xml中配置的action指定该action所使用的方法
+10:32 使用不包含struts标签的页面login_withoutStag.jsp进行提交，成功。以后尽量使用此方法进行编写
+11:28 添加默认action和默认action对应的class，还有result返回结果一致的更改配置方式，测试成功
+12:36 在struts.xml中引入（include）其它配置文件（struts_login.xml）
+16:28 拦截器的配置和最基础使用
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

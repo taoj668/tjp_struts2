@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+<struts>
+	<package name="p_login" namespace="/ns_login" extends="struts-default">
+		<interceptors>		<!-- 拦截器配置 -->
+			<interceptor name="loginInterceptor" class="org.tj.interceptor.LoginInterceptor"></interceptor>
+			<interceptor-stack name="loginStack">		<!-- 自定义拦截器栈 -->
+				<interceptor-ref name="loginInterceptor"></interceptor-ref>
+				<interceptor-ref name="defaultStack"></interceptor-ref>
+			</interceptor-stack>
+		</interceptors>
+		<default-interceptor-ref name="loginStack"></default-interceptor-ref>   <!-- 本包下所有action都应用此拦截器栈 -->
+		<global-results>								<!-- result的返回类型一致时，可以如此配置 -->
+			<result name="success">/WEB-INF/jsp/success.jsp</result>
+			<result name="error">/WEB-INF/jsp/error.jsp</result>
+		</global-results>
+		<action name="a_login01" class="org.tj.action.Login" method="Login01">
+			<!-- <result name="success">/WEB-INF/jsp/success.jsp</result>
+			<result name="error">/WEB-INF/jsp/error.jsp</result> -->
+		</action>
+		
+		<action name="a_login02" class="org.tj.action.Login" method="Login01">
+			<!-- <result name="success">/WEB-INF/jsp/success.jsp</result>
+			<result name="error">/WEB-INF/jsp/error.jsp</result> -->
+		</action>
+		</package>
+</struts>
+
+
+
+
+
+
+
+
+
